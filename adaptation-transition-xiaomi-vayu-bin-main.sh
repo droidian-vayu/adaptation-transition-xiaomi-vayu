@@ -14,8 +14,6 @@
 #[HEADER_SECTION]
 #[HEADER_END]
 
-set -e
-
 [ -z $(dpkg -l | grep "adaptation-droidian-vayu") ]  && echo "adaptation-droidian-vayu is not installed!" && exit 0
 
 ## Update repos
@@ -28,6 +26,9 @@ apt-get --purge remove -y adaptation-droidian-vayu adaptation-vayu-configs
 
 # Install the new adaptation packages
 apt-get install -y adaptation-xiaomi-vayu adaptation-xiaomi-vayu-configs
+
+## Reset templist to avoid conflicts with the list from the new adaptation
+echo "" > /etc/apt/sources.list.d/vayu.tmp.list
 
 ## Update repos
 apt-get update
