@@ -1,0 +1,6 @@
+debian/debhelper-build-stamp
+debian/.debhelper/
+adaptation-transition-xiaomi-vayu
+debian/adaptation-transition-xiaomi-vayu.substvars
+debian/files
+out-adaptation-transition-xiaomi-vayu
