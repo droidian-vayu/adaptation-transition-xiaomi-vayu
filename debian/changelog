@@ -1,7 +1,7 @@
-adaptation-transition-xiaomi-vayu (0.0.3+git20240618225859.9bb7ed3.trixie) trixie; urgency=medium
+adaptation-transition-xiaomi-vayu (0.0.4+git20240619002804.abf92b0.trixie) trixie; urgency=medium
 
   [berbascum]
-  * (9bb7ed3) Update: install scripts to get debug information 
-  * (35a6261) Build release: pre-configs before building new version 0.0.2-trixie 
+  * (abf92b0) Update: install scripts to new tests 
+  * (0ed86e4) Build release: pre-configs before building new version 0.0.3-trixie 
 
- -- berbascum <berbascum@ticv.cat>  Tue, 18 Jun 2024 22:58:59 +0200
+ -- berbascum <berbascum@ticv.cat>  Wed, 19 Jun 2024 00:28:04 +0200
