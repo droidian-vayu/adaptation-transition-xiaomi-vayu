@@ -1,0 +1,1 @@
+deb [arch=arm64,all signed-by=/usr/share/keyrings/vayu-tmp.gpg] https://droidian-vayu.github.io/apt-xiaomi-vayu trixie main
