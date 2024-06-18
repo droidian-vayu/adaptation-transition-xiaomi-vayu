@@ -1,0 +1,7 @@
+adaptation-transition-xiaomi-vayu (0.0.1+git20240618212233.6a886b2.trixie) trixie; urgency=medium
+
+  [berbascum]
+  * (6a886b2) Add transition script 
+  * (4e46f5d) Add debian packaging dir 
+
+ -- berbascum <berbascum@ticv.cat>  Tue, 18 Jun 2024 21:22:33 +0200
