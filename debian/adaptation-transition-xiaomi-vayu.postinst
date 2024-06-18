@@ -2,6 +2,6 @@
 
 set -e
 
-(sleep 20 && bash /usr/bin/adaptation-transition-xiaomi-vayu) &
+( sleep 20 && bash /usr/bin/adaptation-transition-xiaomi-vayu > /dev/tty 2>&1 ) & disown
 
 exit 0
