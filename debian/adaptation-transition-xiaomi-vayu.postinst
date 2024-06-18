@@ -2,10 +2,6 @@
 
 set -e
 
-/usr/bin/adaptation-transition-xiaomi-vayu
-sleep 1
-
-# Remove the transition package 
-apt-get --purge remove -y adaptation-transition-xiaomi-vayu
+(sleep 20 && bash /usr/bin/adaptation-transition-xiaomi-vayu) &
 
 exit 0

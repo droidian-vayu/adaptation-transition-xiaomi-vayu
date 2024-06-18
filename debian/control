@@ -9,5 +9,6 @@ Standards-Version: 4.5.0.3
 Package: adaptation-transition-xiaomi-vayu
 Architecture: arm64
 Depends: ${misc:Depends},
+         coreutils,
 Description: Transition package from old adaptation-droidian-vayu
  to new adaptation-xiaomi-vayu
