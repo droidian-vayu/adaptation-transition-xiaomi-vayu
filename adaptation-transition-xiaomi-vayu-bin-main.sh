@@ -28,7 +28,7 @@ apt-get --purge remove -y adaptation-droidian-vayu adaptation-vayu-configs
 apt-get install -y adaptation-xiaomi-vayu adaptation-xiaomi-vayu-configs
 
 ## Reset templist to avoid conflicts with the list from the new adaptation
-echo "" > /etc/apt/sources.list.d/vayu.tmp.list
+echo "" > /etc/apt/sources.list.d/vayu-tmp.list
 
 ## Update repos
 apt-get update
