@@ -22,6 +22,9 @@ if [ -z $(dpkg -l | grep "adaptation-droidian-vayu") ]; then
     exit 0
 fi
 
+## Patch the script flash-bootimage to avoid errors whe linux-image is installed
+sed -i 's|^GETPROP="$(choose_application.*|GETPROP="/usr/bin/getprop"|g' /usr/sbin/flash-bootimage
+
 ## Update apt archive
 echo "Updating apt archive..." >> /var/log/adaptation-transition-xiaomi-vayu.log
 apt-get update > /dev/tty 2>/dev/null #| tee /var/log/adaptation-transition-xiaomi-vayu.log
