@@ -30,8 +30,8 @@ echo "Updating apt archive..." >> /var/log/adaptation-transition-xiaomi-vayu.log
 apt-get update >> /var/log/adaptation-transition-xiaomi-vayu.log
 
 ## Checking prepared transition adaptation version availability
-transition_version="'0.1.5'"
-transition_version_found=$(apt-cache madison adaptation-droidian-vayu | grep ${transition_version})
+transition_version="0.1.5"
+transition_version_found=$(apt-cache madison adaptation-droidian-vayu | grep "${transition_version}")
 if [ -z "${transition_version_found}" ]; then 
     echo "The spected transition prepared adaptation version \"${transition_version}\" was not found!" \
 	>> /var/log/adaptation-transition-xiaomi-vayu.log
