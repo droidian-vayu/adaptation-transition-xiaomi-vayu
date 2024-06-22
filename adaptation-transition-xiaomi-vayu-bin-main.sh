@@ -52,3 +52,7 @@ apt-get update #> /dev/tty 2>/dev/null #| tee /var/log/adaptation-transition-xia
 # Remove the transition package 
 echo "Removing the adaptation-transition package..." >> /var/log/adaptation-transition-xiaomi-vayu.log
 apt-get --purge remove -y adaptation-transition-xiaomi-vayu >> /var/log/adaptation-transition-xiaomi-vayu.log
+
+## Update apt archive
+echo "Updating apt archive..." >> /var/log/adaptation-transition-xiaomi-vayu.log
+apt-get update #> /dev/tty 2>/dev/null #| tee /var/log/adaptation-transition-xiaomi-vayu.log
