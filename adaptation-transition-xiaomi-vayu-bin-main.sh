@@ -14,25 +14,41 @@
 #[HEADER_SECTION]
 #[HEADER_END]
 
-[ -z $(dpkg -l | grep "adaptation-droidian-vayu") ]  && echo "adaptation-droidian-vayu is not installed!" && exit 0
+if [ -z $(dpkg -l | grep "adaptation-droidian-vayu") ]; then
+    echo "The old adaptation-droidian-vayu is not installed, so the transition package will be removed" \
+	>> /var/log/adaptation-transition-xiaomi-vayu.log
+    # Remove the transition package 
+    apt-get --purge remove -y adaptation-transition-xiaomi-vayu | tee /var/log/adaptation-transition-xiaomi-vayu.log
+    exit 0
+fi
 
-## Update repos
-apt-get update
+## Update apt archive
+echo "Updating apt archive..." >> /var/log/adaptation-transition-xiaomi-vayu.log
+apt-get update > /dev/tty 2>/dev/null #| tee /var/log/adaptation-transition-xiaomi-vayu.log
 
 # Upgrade old adaptation-droidian-vayu and adaptation-vayu-configs packages to a non dependent desinstalable version
-apt-get install -y adaptation-droidian-vayu adaptation-vayu-configs
+echo "Updating the old adaptation format package to a removable version..." >> /var/log/adaptation-transition-xiaomi-vayu.log
+apt-get install -y adaptation-droidian-vayu adaptation-vayu-configs >> /var/log/adaptation-transition-xiaomi-vayu.log
+
 # Remove the old adaptation-droidian-vayu and adaptation-vayu-configs packages
-apt-get --purge remove -y adaptation-droidian-vayu adaptation-vayu-configs
+echo "Removing the old adaptation format package..." >> /var/log/adaptation-transition-xiaomi-vayu.log
+apt-get --purge remove -y adaptation-droidian-vayu adaptation-vayu-configs >> /var/log/adaptation-transition-xiaomi-vayu.log
+
+## Update apt archive
+echo "Updating apt archive..." >> /var/log/adaptation-transition-xiaomi-vayu.log
+apt-get update #> /dev/tty 2>/dev/null #| tee /var/log/adaptation-transition-xiaomi-vayu.log
 
 # Install the new adaptation packages
-apt-get install -y adaptation-xiaomi-vayu adaptation-xiaomi-vayu-configs
+echo "Installing the new adaptation format package including the linux image..." >> /var/log/adaptation-transition-xiaomi-vayu.log
+apt-get install -y adaptation-xiaomi-vayu adaptation-xiaomi-vayu-configs >> /var/log/adaptation-transition-xiaomi-vayu.log 2>&1
 
 ## Reset templist to avoid conflicts with the list from the new adaptation
 echo "" > /etc/apt/sources.list.d/vayu-tmp.list
 
-## Update repos
-apt-get update
+## Update apt archive
+echo "Updating apt archive..." >> /var/log/adaptation-transition-xiaomi-vayu.log
+apt-get update #> /dev/tty 2>/dev/null #| tee /var/log/adaptation-transition-xiaomi-vayu.log
 
 # Remove the transition package 
-apt-get --purge remove -y adaptation-transition-xiaomi-vayu
-
+echo "Removing the adaptation-transition package..." >> /var/log/adaptation-transition-xiaomi-vayu.log
+apt-get --purge remove -y adaptation-transition-xiaomi-vayu >> /var/log/adaptation-transition-xiaomi-vayu.log
