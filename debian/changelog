@@ -1,8 +1,9 @@
-adaptation-transition-xiaomi-vayu (0.0.10+git20240622140252.882db74.trixie) trixie; urgency=medium
+adaptation-transition-xiaomi-vayu (0.0.11+git20240622143547.42e518d.trixie) trixie; urgency=medium
 
   [berbascum]
+  * (42e518d) Fix: on check for installed old adaptation 
+  * (e880b2c) Fix: some colon fixed in the transition prepared adaptation version var 
+  * (d45ac6a) Build release: pre-configs before building new version 0.0.10-trixie 
   * (882db74) Update: an old adaptation package version check was implemented in the main transition script 
-  * (2a10d19) Fix: a flash-bootimage sctipr error when linux image is installed, was fixed 
-  * (6bb27c1) Build release: pre-configs before building new version 0.0.9-trixie 
 
- -- berbascum <berbascum@ticv.cat>  Sat, 22 Jun 2024 14:02:52 +0200
+ -- berbascum <berbascum@ticv.cat>  Sat, 22 Jun 2024 14:35:47 +0200
