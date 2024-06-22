@@ -27,7 +27,16 @@ sed -i 's|^GETPROP="$(choose_application.*|GETPROP="/usr/bin/getprop"|g' /usr/sb
 
 ## Update apt archive
 echo "Updating apt archive..." >> /var/log/adaptation-transition-xiaomi-vayu.log
-apt-get update > /dev/tty 2>/dev/null #| tee /var/log/adaptation-transition-xiaomi-vayu.log
+apt-get update >> /var/log/adaptation-transition-xiaomi-vayu.log
+
+## Checking prepared transition adaptation version availability
+transition_version="'0.1.5'"
+transition_version_found=$(apt-cache madison adaptation-droidian-vayu | grep ${transition_version})
+if [ -z "${transition_version_found}" ]; then 
+    echo "The spected transition prepared adaptation version \"${transition_version}\" was not found!" \
+	>> /var/log/adaptation-transition-xiaomi-vayu.log
+    exit 1
+fi
 
 # Upgrade old adaptation-droidian-vayu and adaptation-vayu-configs packages to a non dependent desinstalable version
 echo "Updating the old adaptation format package to a removable version..." >> /var/log/adaptation-transition-xiaomi-vayu.log
