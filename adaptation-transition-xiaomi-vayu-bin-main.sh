@@ -23,6 +23,8 @@ fi
 
 ## Patch the script flash-bootimage to avoid errors whe linux-image is installed
 sed -i 's|^GETPROP="$(choose_application.*|GETPROP="/usr/bin/getprop"|g' /usr/sbin/flash-bootimage
+## Use .device property instead .model
+sed -i 's/device_model=$(${GETPROP} ro.product.vendor.model/device_model=$(${GETPROP} ro.product.vendor.device/g' /usr/sbin/flash-bootimage
 
 ## Update apt archive
 echo "Updating apt archive..." >> /var/log/adaptation-transition-xiaomi-vayu.log
