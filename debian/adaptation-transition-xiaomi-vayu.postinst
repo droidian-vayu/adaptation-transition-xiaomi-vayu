@@ -2,10 +2,14 @@
 
 set -e
 
+## Log
+[ ! -d "/var/log/droidian-adaptation" ] && mkdir -p /var/log/droidian-adaptation
+ADAPTATION_LOG="/var/log/droidian-adaptation/adaptation-transition-xiaomi-vayu.log"
+
 echo
-echo "Starting the adaptation replacement process in the background. It will take a few minuts" | tee /var/log/adaptation-transition-xiaomi-vayu.log
+echo "Starting the adaptation replacement process in the background. It will take a few minuts" | tee ${ADAPTATION_LOG}
 echo
-echo "A log will be created in /var/log/adaptation-transition-xiaomi-vayu.log"
+echo "A log will be created in ${ADAPTATION_LOG}"
 echo
 
 (sleep 8 && bash /usr/bin/adaptation-transition-xiaomi-vayu) &
