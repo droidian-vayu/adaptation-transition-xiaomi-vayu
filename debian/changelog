@@ -1,9 +1,10 @@
-adaptation-transition-xiaomi-vayu (0.0.11+git20240622143547.42e518d.trixie) trixie; urgency=medium
+adaptation-transition-xiaomi-vayu (0.0.12+git20240626175031.160ddec.trixie) trixie; urgency=medium
 
   [berbascum]
+  * (160ddec) Fix: critical errors in the main script 
+  * (8d3cfef) Update: the log file was moved to the droidian-adaptation logs dir 
+  * (6e6e05c) Fix: flash-bootimage to use the ro.product.vendor.device instead ro.product.vendor.model 
+  * (b66488c) Build release: pre-configs before building new version 0.0.11-trixie 
   * (42e518d) Fix: on check for installed old adaptation 
-  * (e880b2c) Fix: some colon fixed in the transition prepared adaptation version var 
-  * (d45ac6a) Build release: pre-configs before building new version 0.0.10-trixie 
-  * (882db74) Update: an old adaptation package version check was implemented in the main transition script 
 
- -- berbascum <berbascum@ticv.cat>  Sat, 22 Jun 2024 14:35:47 +0200
+ -- berbascum <berbascum@ticv.cat>  Wed, 26 Jun 2024 17:50:31 +0200
