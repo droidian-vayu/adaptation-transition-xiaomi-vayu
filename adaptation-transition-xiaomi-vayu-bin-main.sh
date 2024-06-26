@@ -15,9 +15,8 @@
 #[HEADER_END]
 ADAPTATION_LOG="/var/log/droidian-adaptation/adaptation-transition-xiaomi-vayu.log"
 
-if [ -z $(dpkg -l | grep "adaptation-droidian-vayu") ]; then
-    echo "The old adaptation-droidian-vayu is not installed, so the transition package will be removed" >> 
-    ${ADAPTATION_LOG}
+if [ -z "$(dpkg -l | grep "adaptation-droidian-vayu")" ]; then
+    echo "The old adaptation-droidian-vayu is not installed, so the transition package will be removed" >> ${ADAPTATION_LOG}
     # Remove the transition package 
     apt-get --purge remove -y adaptation-transition-xiaomi-vayu >> ${ADAPTATION_LOG}
     exit 0
