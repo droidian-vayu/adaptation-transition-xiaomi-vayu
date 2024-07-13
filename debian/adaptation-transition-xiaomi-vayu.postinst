@@ -7,7 +7,7 @@ set -e
 ADAPTATION_LOG="/var/log/droidian-adaptation/adaptation-transition-xiaomi-vayu.log"
 
 echo
-echo "Starting the adaptation replacement process in the background. It will take a few minuts" | tee ${ADAPTATION_LOG}
+echo "Starting the adaptation replacement process in the background. It will take a few minutes" | tee ${ADAPTATION_LOG}
 echo
 echo "A log will be created in ${ADAPTATION_LOG}"
 echo
